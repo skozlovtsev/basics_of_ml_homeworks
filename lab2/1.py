@@ -16,3 +16,17 @@ data_scaled = sp.scale(Input_data)
 
 print("Mean =", data_scaled.mean(axis=0))
 print("Std deviation =", data_scaled.std(axis=0))
+
+data_scaler_minmax = sp.MinMaxScaler(feature_range=(0, 1))
+data_scaled_minmax = data_scaler_minmax.fit_transform(Input_data)
+
+print("\nMin max scaled data:\n", data_scaled_minmax)
+
+data_normalized_l1 = sp.normalize(Input_data, norm="l1")
+
+print("\nL1 normalized data:\n", data_normalized_l1)
+
+data_normalized_l2 = sp.normalize(Input_data, norm="l2")
+
+print("\nL2 normalized data:\n", data_normalized_l2)
+
